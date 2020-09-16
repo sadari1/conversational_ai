@@ -1,0 +1,27 @@
+from chatterbot.logic import LogicAdapter
+
+
+class MyLogicAdapter(LogicAdapter):
+
+    def __init__(self, chatbot, **kwargs):
+        super().__init__(chatbot, **kwargs)
+
+        def can_process(self, statement):
+            if statement == "asdf":
+                return True
+            
+            return False
+
+        def process(self, input_statement, additional_response_selection_parameters=None):
+            import random
+
+            # Randomly select a confidence between 0 and 1
+            confidence = random.uniform(0, 1)
+
+            # For this example, we will just return the input as output
+            selected_statement = input_statement
+            selected_statement.confidence = confidence
+            
+
+            return selected_statement
+    
