@@ -1,0 +1,9 @@
+[submodule "gpt-2"]
+	path = gpt-2
+	url = https://github.com/openai/gpt-2.git
+[submodule "gpt-2-Pytorch"]
+	path = gpt-2-Pytorch
+	url = https://github.com/graykode/gpt-2-Pytorch.git
+[submodule "transformers"]
+	path = transformers
+	url = https://github.com/huggingface/transformers.git
