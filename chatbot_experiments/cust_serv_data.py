@@ -1,6 +1,9 @@
 #%%
 import pandas as pd
+import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
+import time
+import keras
 
 #%%
 df = pd.read_csv("../data/customer_service/twcs/twsc_sorted.csv", parse_dates=[3])
@@ -12,11 +15,6 @@ df = pd.read_csv("../data/customer_service/twcs/twsc_sorted.csv", parse_dates=[3
 #%%
 
 amazon = df[df.author_id == 'AmazonHelp']
-
-
-#%%
-
-
 
 #%%
 
@@ -42,7 +40,8 @@ responses = amazon[~ pd.isna(amazon.in_response_to_tweet_id) & ~( amazon.inbound
 x = []
 y = []
 
-for f in range(responses.iloc[:100].shape[0]):
+tic = time.time()
+for f in range(responses.iloc[:1000].shape[0]):
 
     in_resp_to = responses.iloc[f].in_response_to_tweet_id
     query = df[df.tweet_id == in_resp_to]
@@ -58,26 +57,196 @@ for f in range(responses.iloc[:100].shape[0]):
     y.append(response_str)
     x.append(query_str)
 
+toc = time.time()
+
+print(f"Job took {toc-tic} seconds")
+#%%
+
+def process_token(token):
+    replace_list = [".", "!", ",", "?", "'"]
+
+    for r in replace_list:
+        token = token.replace(r, "")
     
+    return token.lower()
+    
+def tokenize_set(set):
+
+    tic = time.time()
+
+    set_ = []
+    for line in range(len(set[:])):
+        tokens = set[line].split(" ")
+
+        line = []
+        for token in tokens:
+            cleaned_token = process_token(token)
+            num = vocab_dict[cleaned_token]
+            line.append(num)
+
+        set_.append(line)
+
+    
+    set_ = np.array(set_)
+    toc = time.time()
+    print(f"Job took {toc-tic} seconds")
+
+    return set_
+
+def add_padding(x_in, y_in):
+
+    combined = np.concatenate((x_in, y_in))
+    # Padding:
+    max_ = 0
+    for line in combined:
+        length = len(line)
+        if length > max_:
+            max_ = length
+    
+    x_out = []
+    y_out = []
+    for f in range(len(x)):
+        # x_in[f] = np.pad(x_in[f], (0, max_ - len(x_in[f])))
+        x_out.append(np.pad(x_in[f], (0, max_ - len(x_in[f]))))
+        # x_in[f] = x_in[f].reshape(1, x_in[f])
+
+    for f in range(len(y)):
+        # y_in[f] = np.pad(y_in[f], (0, max_ - len(y_in[f])))
+        y_out.append(np.pad(y_in[f], (0, max_ - len(y_in[f]))))
+        # y_in[f] = x_in[f].reshape(1, y_in[f])
+
+    x_out = np.array(x_out)
+    y_out = np.array(y_out)
+    return x_out, y_out
+
 # %%
 
 corpus = x + y 
 
 vocab_list = []
 
-for line in corpus:
+tic = time.time()
+for line in corpus[:]:
     tokens = line.split(" ")
     for token in tokens:
         if token not in vocab_list:
+            token = process_token(token)
             vocab_list.append(token)
     
+vocab_list = np.unique(vocab_list)
+toc = time.time()
+print(f"Job took {toc-tic} seconds")
 
+#%%
+vocab_dict = {}
+
+tic = time.time()
+
+for f in range(len(vocab_list)):
+    word = vocab_list[f]
+    vocab_dict[word] = f + 1
+
+toc = time.time()
+print(f"Job took {toc-tic} seconds")
+
+#%%
+
+x_set = tokenize_set(x)
+y_set = tokenize_set(y)
+
+
+x_set, y_set = add_padding(x_set, y_set)
 
 #%%
 
 
+
+
 # %%
 
+# Convert to one hot vectors
+
+oh_x_set = []
+
+tic = time.time()
+
+for f in range(len(x_set)):
+    line = x_set[f]
+    oh_x_line = []
+    for g in range(len(line)):
+
+        # one_hot = list(np.zeros((len(vocab_dict)+1)))
+        # one_hot[line[g]] = 1
+        # oh_x_line.append(one_hot)
+
+        # oh_x_line.append(keras.utils.to_categorical(line[g], len(vocab_dict)+1))
+    oh_x_set.append(oh_x_line)
+
+
+
+toc = time.time()
+print(f"Job took {toc-tic} seconds")
+
+#%%
+
+tic = time.time()
+
+oh_x_set = np.array(oh_x_set)
+
+toc = time.time()
+print(f"Job took {toc-tic} seconds")
+#%%
+
+oh_y_set = []
+
+
+tic = time.time()
+
+for f in range(len(y_set)):
+    line = y_set[f]
+    oh_y_line = []
+    for g in range(len(line)):
+
+        # one_hot = list(np.zeros((len(vocab_dict)+1)))
+        # one_hot[line[g]] = 1
+        # oh_y_line.append(one_hot)
+
+        oh_y_line.append(keras.utils.to_categorical(line[g], len(vocab_dict)+1))
+    oh_y_set.append(oh_y_line)
+
+toc = time.time()
+print(f"Job took {toc-tic} seconds")
+
+#%%
+tic = time.time()
+oh_y_set = np.array(oh_y_set)
+
+toc = time.time()
+print(f"Job took {toc-tic} seconds")
+#%%
+# x_set = x_set.reshape(x_set.shape[0], 1, x_set.shape[1])
+# y_set = y_set.reshape(y_set.shape[0], 1, y_set.shape[1])
+#%%
+
+# Use GLOVE to convert every OH array into a feature vector.
+
+
+
+#%% Saving these arrays to avoid the long processing times otherwise.
+
+tic = time.time()
+
+np.save("oh_x_set.npy", oh_x_set)
+np.save("oh_y_set.npy", oh_y_set)
+
+toc = time.time()
+print(f"Job took {toc-tic} seconds")
+
+#%%
+
+oh_x_set = np.load("oh_x_set.npy")
+oh_y_set = np.load("oh_y_set.npy")
+#%%
 # vectorizer = TfidfVectorizer()
 # fit = vectorizer.fit(corpus)
 # x = fit.transform(x).toarray()
@@ -93,15 +262,26 @@ from tensorflow.keras.models import Sequential, Model
 from tensorflow.keras.layers import Dense, Input, Dropout, Embedding, LSTM
 from tensorflow.keras.optimizers import RMSprop, Adam, Nadam
 
-input_layer = Input( shape=(96,  1077))
-lstm = Bidirectional(LSTM(500, activation="tanh", return_sequences=True, dropout=0.3))(input_layer, training = True)
-lstm = Bidirectional(LSTM(250, activation="tanh",return_sequences=True, dropout=0.3))(lstm, training = True)
-lstm = Bidirectional(LSTM(538, activation="tanh",return_sequences=True, dropout=0.3))(lstm, training = True)
-lstm = LSTM(1077, activation = 'sigmoid', return_sequences=True, dropout=0.3)(lstm, training = True)
+input_layer = Input( shape=( 108, 4843))
+lstm = Bidirectional(LSTM(200, activation="tanh", return_sequences=True, dropout=0.3))(input_layer, training = True)
+lstm = Bidirectional(LSTM(200, activation="tanh",return_sequences=True, dropout=0.3))(lstm, training = True)
+lstm = Bidirectional(LSTM(200, activation="tanh",return_sequences=True, dropout=0.3))(lstm, training = True)
+lstm = LSTM(4843, activation = 'sigmoid', return_sequences=True, dropout=0.3)(lstm, training = True)
 model = Model(input_layer, lstm)
 
 model.compile(optimizer='adam', loss='mse', metrics=['mse', 'accuracy'])
 print(model.summary())
+
+
+# input_layer = Input( shape=( 1, 4277))
+# lstm = Bidirectional(LSTM(2138, activation="tanh", return_sequences=True, dropout=0.3))(input_layer, training = True)
+# lstm = Bidirectional(LSTM(1000, activation="tanh",return_sequences=True, dropout=0.3))(lstm, training = True)
+# lstm = Bidirectional(LSTM(200, activation="tanh",return_sequences=True, dropout=0.3))(lstm, training = True)
+# lstm = LSTM(4277, activation = 'sigmoid', return_sequences=True, dropout=0.3)(lstm, training = True)
+# model = Model(input_layer, lstm)
+
+# model.compile(optimizer='adam', loss='mse', metrics=['mse', 'accuracy'])
+# print(model.summary())
 # from transformers import AutoTokenizer, AutoModelWithLMHead
 
 # tokenizer = AutoTokenizer.from_pretrained("gpt2-large")
@@ -109,11 +289,11 @@ print(model.summary())
 # model = AutoModelWithLMHead.from_pretrained("gpt2-large").train()
 # %%
 from tensorflow.keras.callbacks import ModelCheckpoint
-checkpoint = ModelCheckpoint('lstm_model.hdf5', monitor='val_accuracy', verbose=1, save_best_only=True, mode='max')
+checkpoint = ModelCheckpoint('lstm_model.hdf5', monitor='accuracy', verbose=1, save_best_only=True, mode='max')
 batch_size=64
-epochs=1000
+epochs=20
 
-model.fit(x=x, y=y,
+model.fit(x=oh_x_set, y=oh_y_set,
         batch_size=batch_size, epochs=epochs,
         verbose=1, callbacks=[checkpoint])
 
@@ -121,9 +301,9 @@ model.fit(x=x, y=y,
 
 import numpy as np
 
-preds = np.round(model.predict(x))
+preds = np.round(model.predict(oh_x_set[:10]))
 
-sents = vectorizer.inverse_transform(preds)
+# sents = vectorizer.inverse_transform(preds)
 
 #%%
 # from torch.utils import data
