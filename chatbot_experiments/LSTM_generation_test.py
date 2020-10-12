@@ -6,6 +6,16 @@ import time
 import keras
 from nltk.tokenize import word_tokenize, TweetTokenizer
 
+
+import tensorflow.keras as keras
+from tensorflow.keras.layers import Bidirectional, Flatten
+from tensorflow.keras import optimizers
+from tensorflow.keras import losses
+from tensorflow.keras.models import Sequential, Model
+from tensorflow.keras.layers import Dense, Input, Dropout, Embedding, LSTM, Embedding
+from tensorflow.keras.optimizers import RMSprop, Adam, Nadam
+
+
 '''
 1. tokenize the sentences, use SOS and EOS and UNK tokens. 
 2. pass through an embedding layer
@@ -171,14 +181,6 @@ np.save("y_train.npy", y_train)
 #%%
 
 #%%
-
-import tensorflow.keras as keras
-from tensorflow.keras.layers import Bidirectional, Flatten
-from tensorflow.keras import optimizers
-from tensorflow.keras import losses
-from tensorflow.keras.models import Sequential, Model
-from tensorflow.keras.layers import Dense, Input, Dropout, Embedding, LSTM, Embedding
-from tensorflow.keras.optimizers import RMSprop, Adam, Nadam
 
 
 vocab_size = len(vocab)
