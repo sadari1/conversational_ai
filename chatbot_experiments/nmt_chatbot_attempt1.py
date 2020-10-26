@@ -11,8 +11,9 @@ from keras.models import Model
 from keras.layers import Input, LSTM, Dense, Embedding
 from tensorflow.keras.losses import sparse_categorical_crossentropy
 from keras.optimizers import Adam
+from keras import regularizers
 
-punctuation_list = ['.', ':', '!', '?', ',', '^']
+punctuation_list = ['.', ':', '!', '?', ',', '^', '(', ')', '。', '、', "'", ":/", '-', '/', '&', ';', '$', '*', '+', '\\', '_', '`', '"', '=']
 # %%
 df = pd.read_csv("../data/customer_service/twcs/twsc_sorted.csv")#, parse_dates=[3])
 
@@ -68,7 +69,7 @@ responses.text = responses.text.apply(purge_at)
 #%%
 
 tic = time.time()
-responses = responses.iloc[:500]
+responses = responses.iloc[:1000]
 in_resp_to_list = list(responses.in_response_to_tweet_id)
 
 queries = df[df.tweet_id.isin(in_resp_to_list)]
@@ -77,8 +78,8 @@ query_id_list = list(queries.tweet_id)
 responses = responses[responses.in_response_to_tweet_id.isin(query_id_list)]
 responses = responses.drop_duplicates("in_response_to_tweet_id")
 
-q = queries.text.apply(purge_at)
-r = responses.text
+q = queries.text.apply(lambda row: row.encode('ascii',errors='ignore').decode()).apply(purge_at)
+r = responses.text.apply(lambda row: row.encode('ascii',errors='ignore').decode())
 
 toc = time.time()
 print(f"Job took {toc-tic} seconds")
@@ -90,7 +91,55 @@ lower_mapper = lambda x: x.lower()
 
 q = q.apply(lower_mapper)
 r = r.apply(lower_mapper)
+#%%
+# Get rid of http
 
+extra_words = ['http', '@', '#', *list(range(10)), *punctuation_list, '[', ']']
+def no_extra_words(text):
+    sent = []
+    text = text.split(" ")
+    for word in text:
+        check=True
+
+        for purge in extra_words:
+            if str(purge) in word:
+                check = False
+        if check:
+            sent.append(word)
+    return arr_to_str(sent)
+
+tic = time.time()
+
+q = q.apply(no_extra_words)#list(map(no_extra_words, q))
+r = r.apply(no_extra_words)#list(map(no_extra_words, r))
+
+toc = time.time()
+print(f"Job took {toc-tic} seconds.")
+#%%
+def purge_non_english(text):
+    # try:
+    text = [w for w in nltk.wordpunct_tokenize(text) \
+        if w.lower() in words or not w.isalpha()]
+    # except:
+    #     # print(text)
+
+    #     try:
+    #         print([w for w in nltk.wordpunct_tokenize(text) \
+    #             if w.lower() in words or not w.isalpha()])
+    #     except: 
+    #         print("FAIL", text)
+    #         print([w for w in nltk.wordpunct_tokenize(text) \
+    #             if w.lower() in words or not w.isalpha()])
+    return arr_to_str(text)
+
+tic = time.time()
+
+q = q.apply(purge_non_english)#list(map(purge_non_english, q))
+r = r.apply(purge_non_english)#list(map(purge_non_english, r))
+
+
+toc = time.time()
+print(f"Job took {toc-tic} seconds.")
 # %%
 tweet_tokenizer = TweetTokenizer()
 
@@ -106,9 +155,20 @@ toc = time.time()
 print(f"Job took {toc-tic} seconds.")
 
 #%%
+import nltk
+words = set(nltk.corpus.words.words())
 
+# sent = "Io andiamo to the beach with my amico."
+# " ".join(w for w in nltk.wordpunct_tokenize(sent) \
+#          if w.lower() in words or not w.isalpha())
+
+# Also keeps english only words.
 def purge_stopwords(text):
+
+    # Make english first
+
     text = set(text)
+
     to_purge = set(stopwords.words('english') + punctuation_list)
 
     return list(text.difference(to_purge))
@@ -121,26 +181,7 @@ def _(eng_sents):
 q = timer(_, [q])
 r = timer(_, [r])
 
-#%%
-# Get rid of http
 
-extra_words = ['http', '@', '#']
-def no_extra_words(text):
-    sent = []
-
-    for word in text:
-        check=True
-
-        for purge in extra_words:
-            if purge in word:
-                check = False
-        if check:
-            sent.append(word)
-    return sent
-
-
-q = list(map(no_extra_words, q))
-r = list(map(no_extra_words, r))
 
 # %%
 
@@ -159,7 +200,7 @@ def build_vocabulary(text):
     return vocab
 
 vocab = timer(build_vocabulary, [list(q) + list(r)])
-
+print(f"Vocab length: {len(vocab)}")
 # reverse_eng_vocab = dict(zip(eng_vocab.values(), eng_vocab.keys()))
 # reverse_fra_vocab = dict(zip(fra_vocab.values(), fra_vocab.keys()))
 
@@ -230,16 +271,17 @@ np.save("r.npy", r)
 num_encoder_tokens = q.shape[1]
 num_decoder_tokens = r.shape[1]
 
-latent_dim = 1000
+latent_dim = 750
 
 # %%
 
 encoder_inputs = Input(shape=(None,))
 enc_x = Embedding(len(vocab), latent_dim,)(encoder_inputs)
+
 enc_lstm = LSTM(units = latent_dim,
-                    activation = "relu",
+                    activation = "tanh",
                     return_sequences = False,                    
-                           return_state=True)
+                           return_state=True, kernel_regularizer=regularizers.l1_l2(l1=1e-4, l2=1e-3))
 x, state_h, state_c = enc_lstm(enc_x)
 
 encoder_states = [state_h, state_c]
@@ -247,10 +289,11 @@ encoder_states = [state_h, state_c]
 # Set up the decoder, using `encoder_states` as initial state.
 decoder_inputs = Input(shape=(None, 1))
 # dec_x= Embedding(len(fra_vocab), latent_dim)(decoder_inputs)
+
 decoder_lstm= LSTM(units = latent_dim,
-                    activation = "relu",
+                    activation = "tanh",
                     return_sequences = True,
-                    return_state = True)
+                    return_state = True, kernel_regularizer=regularizers.l1_l2(l1=1e-4, l2=1e-3))
 decoder_outputs, _, _ = decoder_lstm(decoder_inputs, initial_state=encoder_states)
 decoder_dense = Dense(len(vocab), activation='softmax')
 decoder_outputs = decoder_dense(decoder_outputs)
@@ -295,8 +338,8 @@ decoder_r_input = r.reshape((-1, r_max+2, 1))[:, :-1, :]
 decoder_r_target = r.reshape((-1, r_max+2, 1))[:, 1:, :]
 
 # %%
-batch_size = 1024
-epochs = 100
+batch_size = 512
+epochs = 1000
 # Train model as previously
 model.fit([q, decoder_r_input], decoder_r_target,
           batch_size=batch_size,
@@ -345,8 +388,10 @@ def decode_sequence(input_seq):
         
         # 2. Update prev_word with the predicted word
         predicted_id = np.argmax(logits[0, 0, :])
-        if predicted_id == 0:
-            predicted_id = 1
+        # if predicted_id == 0:
+        #     predicted_id = 1
+
+        # print(predicted_id, reverse_dict[predicted_id])
         predicted_word = reverse_dict[predicted_id]
         translation.append(predicted_word)
 
@@ -379,7 +424,7 @@ def process_input_text(text):
 
 # %%
 
-index = 29
+index = 24
 sample = responses[index:index+1].text
 print(sample)
 
@@ -391,18 +436,19 @@ sample = process_input_text(sample)
 
 sample = np.array(sample).reshape((1, q_max+2))#[:1]
 
-decode_sequence(sample.astype(np.float32))
+decode_sequence(sample.astype(np.float32)).replace("<PAD>", "")
 
 # %%
 
-for i in range(0, 100):
-    sample = responses[i:i+1].text
+for i in range(0, 10):
 
-    true = queries[i:i+1].text
+    print(f"i: {i}")
+    sample = queries[i:i+1].text
 
-    print(f"Query: {true}\Response: {sample}")
+    true = responses[i:i+1].text
+
+    print(f"Query: {sample.iloc[0]}\Response: {true.iloc[0]}")
     sample = process_input_text(sample)
-
     sample = np.array(sample).reshape((1, q_max+2)).astype(np.float32)#[:1]
     decoded = decode_sequence(sample).replace("<PAD>", "")
     print(f'\nTranslated: {decoded}\n')
