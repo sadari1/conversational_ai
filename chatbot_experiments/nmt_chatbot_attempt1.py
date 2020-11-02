@@ -6,12 +6,14 @@ from nltk.tokenize import word_tokenize, TweetTokenizer
 import string
 import time
 from nltk.corpus import stopwords
-
+import nltk
+import keras
 from keras.models import Model
 from keras.layers import Input, LSTM, Dense, Embedding
 from tensorflow.keras.losses import sparse_categorical_crossentropy
 from keras.optimizers import Adam
 from keras import regularizers
+words = set(nltk.corpus.words.words())
 
 punctuation_list = ['.', ':', '!', '?', ',', '^', '(', ')', '。', '、', "'", ":/", '-', '/', '&', ';', '$', '*', '+', '\\', '_', '`', '"', '=']
 # %%
@@ -69,7 +71,7 @@ responses.text = responses.text.apply(purge_at)
 #%%
 
 tic = time.time()
-responses = responses.iloc[:1000]
+responses = responses.iloc[:5000]
 in_resp_to_list = list(responses.in_response_to_tweet_id)
 
 queries = df[df.tweet_id.isin(in_resp_to_list)]
@@ -118,6 +120,7 @@ print(f"Job took {toc-tic} seconds.")
 #%%
 def purge_non_english(text):
     # try:
+
     text = [w for w in nltk.wordpunct_tokenize(text) \
         if w.lower() in words or not w.isalpha()]
     # except:
@@ -327,10 +330,20 @@ model = Model([encoder_inputs, decoder_inputs], decoder_outputs)
 print(model.summary())
 # %%
 
+
 # Compile & run training
 model.compile(optimizer=Adam(lr = 0.002), loss=sparse_categorical_crossentropy, metrics = ['accuracy'])
 # Note that `decoder_target_data` needs to be one-hot encoded,
 # rather than sequences of integers like `decoder_input_data`!
+import os
+checkpoint_path = "chatbot_lstm.ckpt"
+checkpoint_dir = os.path.dirname(checkpoint_path)
+
+# Create a callback that saves the model's weights
+cp_callback = keras.callbacks.ModelCheckpoint(filepath=checkpoint_path,
+                                                 save_weights_only=True,
+                                                 verbose=1)
+
 
 #%%
 # encoder_eng_input = eng.reshape((-1, eng_max+2))
@@ -339,12 +352,17 @@ decoder_r_target = r.reshape((-1, r_max+2, 1))[:, 1:, :]
 
 # %%
 batch_size = 512
-epochs = 1000
+epochs = 2000
 # Train model as previously
 model.fit([q, decoder_r_input], decoder_r_target,
           batch_size=batch_size,
-          epochs=epochs)
+          epochs=epochs,
+          callbacks=[cp_callback])
 
+
+#%%
+
+model.load_weights(checkpoint_path)
 
 # %%
 encoder_model = Model(encoder_inputs, encoder_states)
@@ -447,7 +465,7 @@ for i in range(0, 10):
 
     true = responses[i:i+1].text
 
-    print(f"Query: {sample.iloc[0]}\Response: {true.iloc[0]}")
+    print(f"Query: {sample.iloc[0]}\nResponse: {true.iloc[0]}")
     sample = process_input_text(sample)
     sample = np.array(sample).reshape((1, q_max+2)).astype(np.float32)#[:1]
     decoded = decode_sequence(sample).replace("<PAD>", "")
