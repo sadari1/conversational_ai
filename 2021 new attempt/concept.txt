@@ -1,0 +1,42 @@
+pizza ordering service bot
+
+functionality:
+
+-create order
+#-update order
+-cancel order
+#-check order
+
+-make a complaint
+-give praise
+
+can have conversation:
+'hi how are you'
+'im fine'
+
+'id like to order a pizza'
+'sure, what kind' (start pizza order code)
+
+'large 2 topping with half onions half green pepper'
+'Ok, so a [repeat order]'
+
+'No, I want to add tomatoes to the whole thing' [update order]
+
+
+menu:
+
+medium and large pizzas
+
+onions, pineapple, green pepper, mushroom, and pepperoni are the 5 toppings
+
+Pipeline:
+
+training on input -> response samples.
+Input is stripped of stopwords.
+
+There is one main chatbot that handles overall requests. Its only purpose is to
+hold convesations. 
+
+Specific actions like ordering a pizza then go into special functions that
+work on the request and have their own chatbots or scipted responses.
+
