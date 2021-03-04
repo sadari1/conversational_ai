@@ -11,6 +11,12 @@ import nltk
 words = set(nltk.corpus.words.words())
 
 from transformer_redone import *
+import spacy
+
+import mlflow
+import mlflow.tensorflow
+
+nlp = spacy.load("en_core_web_sm")
 
 punctuation_list = ['.', ':', '!', '?', ',', '^', '(', ')', '。', '、', "'", ":/", '-', '/', '&', ';', '$', '*', '+', '\\', '_', '`', '"', '=']
 #%%
@@ -57,7 +63,7 @@ def stop_time():
     print(f"Job took {toc-tic} seconds.")
 #%%
 
-amazon = df[df.author_id == 'AmazonHelp']
+amazon = df[df.author_id.isin(['AmazonHelp' ])]#,'AppleSupport', 'Uber_Support'])]
 
 responses = amazon[~ pd.isna(amazon.in_response_to_tweet_id) & ~( amazon.inbound)]
 responses.text = responses.text.apply(purge_at)
@@ -87,6 +93,25 @@ lower_mapper = lambda x: x.lower()
 
 q = q.apply(lower_mapper)
 r = r.apply(lower_mapper)
+#%%
+# Only get relevant parts of speech
+
+good_list = ['PROPN', 'VERB', 'NOUN', 'PART']
+def strip_POS(text):
+  doc = nlp(text)
+
+  sent = []
+  for token in doc:
+    if token.pos_ in good_list:
+      sent.append(token.text)
+  return arr_to_str(sent)
+
+tic = time.time()
+q = q.apply(strip_POS)
+toc = time.time()
+print(f"Job took {toc-tic} seconds.")
+
+
 #%%
 # Get rid of http
 
@@ -144,7 +169,9 @@ print(f"Job took {toc-tic} seconds.")
 # input_vocab_size = tokenizer_pt.vocab_size + 2
 # target_vocab_size = tokenizer_en.vocab_size + 2
 # dropout_rate = 0.1
-
+#%%
+np.save("q.npy", q)
+np.save("r.npy", r)
 # %%
 
 tic = time.time()
@@ -176,7 +203,7 @@ for ts in tokenized_string:
 
 #%%
 BUFFER_SIZE = 20000
-BATCH_SIZE = 64
+BATCH_SIZE = 48
 
 def encode(lang1, lang2):
   lang1 = [tokenizer_q.vocab_size] + tokenizer_q.encode(
@@ -196,7 +223,7 @@ def tf_encode(q, r):
   return result_q, result_r
 
 #%%
-MAX_LENGTH = 400
+MAX_LENGTH = 50
 
 tic = time.time()
 def filter_max_length(x, y, max_length=MAX_LENGTH):
@@ -219,9 +246,9 @@ print(f"Job took {toc-tic} seconds.")
 
 #%%
 num_layers = 6
-d_model = 512
-dff = 1024
-num_heads = 8
+d_model = 256
+dff = 256
+num_heads = 4
 
 input_vocab_size = tokenizer_q.vocab_size + 2
 target_vocab_size = tokenizer_r.vocab_size + 2
@@ -253,7 +280,7 @@ transformer = Transformer(num_layers, d_model, num_heads, dff,
 
 #%%
 
-checkpoint_path = "./checkpoints/train/full2/"
+checkpoint_path = "./checkpoints/train/test3"
 
 ckpt = tf.train.Checkpoint(transformer=transformer,
                            optimizer=optimizer)
@@ -261,14 +288,14 @@ ckpt = tf.train.Checkpoint(transformer=transformer,
 ckpt_manager = tf.train.CheckpointManager(ckpt, checkpoint_path, max_to_keep=5)
 
 # if a checkpoint exists, restore the latest checkpoint.
-if ckpt_manager.latest_checkpoint:
-  ckpt.restore(ckpt_manager.latest_checkpoint)
-  print ('Latest checkpoint restored!!')
+# if ckpt_manager.latest_checkpoint:
+#   ckpt.restore(ckpt_manager.latest_checkpoint)
+#   print ('Latest checkpoint restored!!')
 
 
 
 #%%
-EPOCHS = 50
+EPOCHS = 200
 
 train_step_signature = [
     tf.TensorSpec(shape=(None, None), dtype=tf.int64),
@@ -297,33 +324,50 @@ def train_step(inp, tar):
   train_accuracy(tar_real, predictions)
 
 #%%
-for epoch in range(EPOCHS):
-  start = time.time()
 
-  train_loss.reset_states()
-  train_accuracy.reset_states()
+mlflow.set_experiment("transformer")
 
-  # inp -> portuguese, tar -> english
-  for (batch, (inp, tar)) in enumerate(train_dataset):
-    # print(tokenizer_q.decode(inp[0]), tokenizer_r.decode(tar[0]))
-    train_step(inp, tar)
+with mlflow.start_run():
+  
+  mlflow.tensorflow.autolog()
 
-    if batch % 1 == 0:
-      print ('Epoch {} Batch {} Loss {:.4f} Accuracy {:.4f}'.format(
-          epoch + 1, batch, train_loss.result(), train_accuracy.result()))
 
-  if (epoch + 1) % 5 == 0:
-    ckpt_save_path = ckpt_manager.save()
-    print ('Saving checkpoint for epoch {} at {}'.format(epoch+1,
-                                                         ckpt_save_path))
+  mlflow.tensorflow.mlflow.log_metric("batch_size", BATCH_SIZE)
+  mlflow.tensorflow.mlflow.log_metric("num_layers", num_layers)
+  mlflow.tensorflow.mlflow.log_metric("d_model", d_model)
+  mlflow.tensorflow.mlflow.log_metric("dff", dff)
+  mlflow.tensorflow.mlflow.log_metric("num_heads", num_heads)
+  
+  
+  for epoch in range(EPOCHS):
+    start = time.time()
 
-  print ('Epoch {} Loss {:.4f} Accuracy {:.4f}'.format(epoch + 1, 
-                                                train_loss.result(), 
-                                                train_accuracy.result()))
+    train_loss.reset_states()
+    train_accuracy.reset_states()
 
-  print ('Time taken for 1 epoch: {} secs\n'.format(time.time() - start))
+    # inp -> portuguese, tar -> english
+    for (batch, (inp, tar)) in enumerate(train_dataset):
+      # print(tokenizer_q.decode(inp[0]), tokenizer_r.decode(tar[0]))
+      train_step(inp, tar)
 
-#%%
+      if batch % 1 == 0:
+        print ('Epoch {} Batch {} Loss {:.4f} Accuracy {:.4f}'.format(
+            epoch + 1, batch, train_loss.result(), train_accuracy.result()))
+
+    # if (epoch + 1) % 5 == 0:
+    #   ckpt_save_path = ckpt_manager.save()
+    #   print ('Saving checkpoint for epoch {} at {}'.format(epoch+1,
+    #                                                        ckpt_save_path))
+
+    print ('Epoch {} Loss {:.4f} Accuracy {:.4f}'.format(epoch + 1, 
+                                                  train_loss.result(), 
+                                                  train_accuracy.result()))
+
+    print ('Time taken for 1 epoch: {} secs\n'.format(time.time() - start))
+
+mlflow.end_run()
+
+  #%%
 def evaluate(inp_sentence):
   start_token = [tokenizer_q.vocab_size]
   end_token = [tokenizer_q.vocab_size + 1]
@@ -366,27 +410,52 @@ def evaluate(inp_sentence):
 
 
 #%%
+
+def process_sent(sentence):
+  sentence = pd.Series([sentence])
+  sentence = sentence.apply(lower_mapper)
+
+  sentence = sentence.apply(strip_POS)
+  sentence = sentence.apply(no_extra_words)
+  sentence = sentence.apply(purge_non_english)
+
+  # sentence = sentence.apply(arr_to_str)
+  return sentence.iloc[0]
+
+
 def translate(sentence, plot=''):
+  sentence = process_sent(sentence)
+
   result, attention_weights = evaluate(sentence)
 
   predicted_sentence = tokenizer_r.decode([i for i in result 
                                             if i < tokenizer_r.vocab_size])  
 
   print('Input: {}'.format(sentence))
-  print('Predicted translation: {}'.format(predicted_sentence))
+  print('\nPredicted translation: {}'.format(predicted_sentence))
 
   if plot:
     plot_attention_weights(attention_weights, sentence, result, plot)
+#%%
+
+transformer.save_weights('./checkpoints/full1.ckpt')
 
 
 #%%
+# latest_check = tf.train.latest_checkpoint(checkpoint_path)
+
+transformer.load_weights('./checkpoints/full4.ckpt')
+
+#%%
 translate("I've been waiting for my package for a while")
-print ("Real translation: this is a problem we have to solve .")
+# print ("Real translation: this is a problem we have to solve .")
 
-
+#%%
+translate("My account was hacked can you help me?")
+# print ("Real translation: this is a problem we have to solve .")
 # %%
 
 for i in range(10):
   translate(queries.iloc[i].text)
-  print(f"Real translation: {responses.iloc[i].text}\n")
+  print(f"\nReal translation: {responses.iloc[i].text}\n")
 # %%
