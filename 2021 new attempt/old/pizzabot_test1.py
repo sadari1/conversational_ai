@@ -4,8 +4,14 @@ import numpy as np
 from chatterbot import ChatBot
 #%%
 
-edf_columns = ['name', '']
+edf_columns = ['name', 'size', 't1', 't2', 't3']
 
+test_arr = [['John', 'M', 'O', 'GP', 'T'],
+            ['Mary', 'L', 'P', 'GP', ''],
+            ['Sue', 'L', 'O', '', '']]
+
+order_database = pd.DataFrame(test_arr, columns=edf_columns)
+order_database.to_csv('orders.csv', index=False)
 #%%
 
 bot = ChatBot(
@@ -33,7 +39,17 @@ praise_responses = ["That's great to hear!",
 ]
 #%%
 def submit_order(order):
-    print(order)
+    toppings = order['toppings'].split(',')
+
+    for f in range(3):
+        toppings.append('')
+    t1, t2, t3 = [f.upper()[0] if f is not '' else '' for f in toppings[:3]]
+
+    new_order = pd.Series([order['name'], order['size'], t1, t2, t3],
+    index=['name', 'size', 't1', 't2', 't3'])
+    order_database = pd.read_csv('orders.csv')
+    order_database = order_database.append(new_order, ignore_index=True)
+    order_database.to_csv('orders.csv', index=False)
 
 #%%
 def order_handler(name):
@@ -46,7 +62,7 @@ def order_handler(name):
         if size[0].lower() == 'c':
             break
 
-        toppings = input("What toppings would you like (onion, green pepper, tomato, pepperoni)")
+        toppings = input("What toppings would you like (onion, green pepper, tomato, pepperoni)? There are 3 maximum")
         
         if toppings[0].lower() == 'c':
             break
@@ -93,14 +109,13 @@ while True:
         if str(response) in order_response:
             order_handler(name)
             continue_sess = input("Thank you for ordering. Is there anything else we can help you with?")
-            first_val = continue_sess[0].lower() 
         
-            if first_val == 'y':
-                continue
-            else:
+            if continue_sess.lower() == 'no':
                 print("Thank you for ordering, goodbye!")
                 break
-
+            else:
+                continue
+                
 
         if str(response) in cancel_response:
             print('cancel')

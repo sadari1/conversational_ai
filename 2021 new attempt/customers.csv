@@ -1,0 +1,1007 @@
+c_id,name,size,type,toppings,num_toppings,price
+1,custom,large,HT,onion,1,11
+1,custom,large,HT,onion,1,11
+2,custom,large,HT,onion,1,11
+1,custom,large,HT,onion,1,11
+3,custom,large,HT,onion,1,11
+1,custom,large,HT,onion,1,11
+16,Chicago,large,D,,0,11
+26,custom,medium,HT,,0,8
+28,Chicago,large,D,,0,11
+23,Breakfast,large,HT,"sausage, bacon, tomato",0,10
+10,custom,medium,HT,"tomato, pineapple,",2,10
+3,custom,medium,HT,"onion,",1,9
+45,custom,medium,D,"bacon, peppeoni, tomato,",3,11
+33,custom,medium,D,"tomato, sausage, pineapple,",3,11
+30,custom,medium,D,"onion, green pepper,",2,10
+29,custom,medium,HT,"peppeoni, pineapple,",2,10
+36,Breakfast,large,HT,"sausage, bacon, tomato",0,10
+1,custom,medium,D,"peppeoni, tomato, peppeoni,",3,11
+32,custom,medium,D,"pineapple, pineapple, sausage,",3,11
+12,custom,medium,D,"tomato, bacon,",2,10
+35,custom,medium,D,,0,8
+23,Student,medium,HT,"onion, pepperoni, tomato",0,10
+9,Mixed,large,HT,"onion, pepperoni, tomato",0,10
+32,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+42,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+11,Chicago,large,D,,0,11
+24,custom,medium,HT,"tomato, green pepper,",2,10
+31,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+12,custom,medium,D,"bacon,",1,9
+28,custom,medium,HT,,0,8
+33,Chicago,large,D,,0,11
+30,custom,medium,HT,,0,8
+30,Chicago,large,D,,0,11
+25,custom,medium,HT,"tomato,",1,9
+48,custom,medium,HT,"green pepper,",1,9
+15,custom,medium,HT,"pineapple,",1,9
+30,Chicago,large,D,,0,11
+9,custom,medium,D,"green pepper, bacon,",2,10
+5,custom,medium,HT,"bacon, tomato, bacon,",3,11
+33,custom,medium,D,,0,8
+44,custom,medium,HT,"green pepper, pineapple, onion,",3,11
+41,Chicago,large,D,,0,11
+17,custom,medium,HT,,0,8
+13,custom,medium,HT,"onion,",1,9
+13,custom,medium,HT,"pineapple,",1,9
+11,custom,medium,HT,,0,8
+12,custom,medium,HT,"sausage, green pepper, onion,",3,11
+11,Student,medium,HT,"onion, pepperoni, tomato",0,10
+18,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+32,custom,medium,D,,0,8
+20,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+13,custom,medium,HT,"peppeoni, tomato,",2,10
+21,custom,medium,HT,"pineapple,",1,9
+46,Student,medium,HT,"onion, pepperoni, tomato",0,10
+26,custom,medium,D,"green pepper,",1,9
+4,Chicago,large,D,,0,11
+26,custom,medium,HT,"green pepper, pineapple, bacon,",3,11
+45,custom,medium,HT,"pineapple, peppeoni, green pepper,",3,11
+30,Chicago,large,D,,0,11
+22,custom,medium,D,,0,8
+11,Breakfast,large,HT,"sausage, bacon, tomato",0,10
+15,custom,medium,HT,,0,8
+46,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+15,custom,medium,HT,,0,8
+15,custom,medium,HT,"tomato, bacon,",2,10
+31,Chicago,large,D,,0,11
+16,custom,medium,HT,"bacon,",1,9
+6,Chicago,large,D,,0,11
+13,Student,medium,HT,"onion, pepperoni, tomato",0,10
+27,custom,medium,HT,"onion, pineapple, pineapple,",3,11
+29,custom,medium,HT,"peppeoni, onion, bacon,",3,11
+6,Chicago,large,D,,0,11
+11,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+6,Chicago,large,D,,0,11
+5,Hawaiian,large,HT,"pineapple, bacon, tomato",0,10
+9,Breakfast,large,HT,"sausage, bacon, tomato",0,10
+24,Student,medium,HT,"onion, pepperoni, tomato",0,10
+48,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+25,custom,medium,HT,"bacon,",1,9
+17,custom,medium,HT,"onion, tomato, sausage,",3,11
+45,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+35,Chicago,large,D,,0,11
+13,Breakfast,large,HT,"sausage, bacon, tomato",0,10
+35,Chicago,large,D,,0,11
+41,custom,medium,HT,"onion, tomato,",2,10
+4,Chicago,large,D,,0,11
+22,custom,medium,HT,"bacon,",1,9
+5,custom,medium,HT,"onion, pineapple, green pepper,",3,11
+3,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+11,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+27,custom,medium,HT,"onion,",1,9
+2,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+35,custom,medium,HT,"pineapple,",1,9
+44,custom,medium,HT,,0,8
+19,custom,medium,HT,"onion, sausage, peppeoni,",3,11
+13,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+24,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+40,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+6,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+11,Mixed,large,HT,"onion, pepperoni, tomato",0,10
+33,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+11,custom,medium,HT,"green pepper, peppeoni,",2,10
+7,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+33,Hawaiian,large,HT,"pineapple, bacon, tomato",0,10
+39,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+38,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+15,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+37,Mixed,large,HT,"onion, pepperoni, tomato",0,10
+13,Chicago,large,D,,0,11
+5,Mixed,large,HT,"onion, pepperoni, tomato",0,10
+48,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+22,Student,medium,HT,"onion, pepperoni, tomato",0,10
+1,custom,medium,HT,"tomato, sausage, sausage,",3,11
+15,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+29,custom,medium,HT,"bacon, tomato, tomato,",3,11
+5,custom,medium,HT,,0,8
+32,custom,medium,D,,0,8
+12,custom,medium,HT,"sausage, onion, peppeoni,",3,11
+49,custom,medium,HT,"bacon, onion, bacon,",3,11
+41,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+40,custom,medium,HT,"pineapple, peppeoni,",2,10
+47,custom,medium,HT,"pineapple, sausage, tomato,",3,11
+28,custom,medium,D,"bacon,",1,9
+29,Chicago,large,D,,0,11
+41,custom,medium,HT,"onion, onion,",2,10
+37,custom,medium,HT,,0,8
+14,custom,medium,HT,,0,8
+15,custom,medium,D,"tomato,",1,9
+15,custom,medium,HT,,0,8
+26,custom,medium,HT,"green pepper,",1,9
+31,custom,medium,HT,"onion, bacon,",2,10
+3,custom,medium,HT,"onion,",1,9
+2,custom,medium,D,,0,8
+46,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+42,custom,medium,HT,"onion, sausage, tomato,",3,11
+16,custom,medium,D,"sausage,",1,9
+18,custom,medium,D,"bacon, bacon,",2,10
+13,Hawaiian,large,HT,"pineapple, bacon, tomato",0,10
+12,custom,medium,D,,0,8
+38,custom,medium,D,"peppeoni, onion, bacon,",3,11
+43,custom,medium,HT,"bacon, green pepper,",2,10
+6,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+45,custom,medium,HT,"onion, sausage, onion,",3,11
+36,Chicago,large,D,,0,11
+47,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+16,custom,medium,D,,0,8
+45,Student,medium,HT,"onion, pepperoni, tomato",0,10
+33,custom,medium,HT,"peppeoni, peppeoni,",2,10
+1,custom,medium,D,,0,8
+36,Chicago,large,D,,0,11
+41,Mixed,large,HT,"onion, pepperoni, tomato",0,10
+16,custom,medium,HT,"tomato, pineapple,",2,10
+32,custom,medium,D,"green pepper, peppeoni, peppeoni,",3,11
+28,Breakfast,large,HT,"sausage, bacon, tomato",0,10
+24,custom,medium,HT,"pineapple,",1,9
+44,custom,medium,HT,"pineapple,",1,9
+32,Chicago,large,D,,0,11
+20,custom,medium,HT,"green pepper, peppeoni, peppeoni,",3,11
+48,custom,medium,HT,"peppeoni,",1,9
+48,custom,medium,HT,,0,8
+38,custom,medium,HT,"bacon, peppeoni,",2,10
+2,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+9,custom,medium,HT,"peppeoni,",1,9
+12,custom,medium,D,"peppeoni, sausage, pineapple,",3,11
+47,custom,medium,HT,"pineapple, tomato, green pepper,",3,11
+5,custom,medium,HT,"peppeoni, tomato,",2,10
+42,Student,medium,HT,"onion, pepperoni, tomato",0,10
+33,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+35,custom,medium,HT,"sausage, onion, peppeoni,",3,11
+25,Hawaiian,large,HT,"pineapple, bacon, tomato",0,10
+37,custom,medium,HT,"tomato, sausage,",2,10
+21,custom,medium,HT,"green pepper, peppeoni,",2,10
+2,Breakfast,large,HT,"sausage, bacon, tomato",0,10
+19,Student,medium,HT,"onion, pepperoni, tomato",0,10
+46,custom,medium,D,"onion,",1,9
+27,custom,medium,HT,"tomato, green pepper,",2,10
+29,custom,medium,HT,"pineapple, bacon, peppeoni,",3,11
+7,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+36,Breakfast,large,HT,"sausage, bacon, tomato",0,10
+41,Chicago,large,D,,0,11
+40,custom,medium,D,"tomato, green pepper, bacon,",3,11
+21,custom,medium,D,"pineapple, tomato,",2,10
+24,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+16,custom,medium,D,"bacon, sausage,",2,10
+3,custom,medium,HT,"sausage,",1,9
+23,custom,medium,HT,"green pepper,",1,9
+8,Hawaiian,large,HT,"pineapple, bacon, tomato",0,10
+15,custom,medium,HT,"green pepper,",1,9
+38,custom,medium,HT,"sausage, pineapple,",2,10
+24,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+49,custom,medium,HT,"sausage, tomato,",2,10
+48,custom,medium,D,,0,8
+28,custom,medium,D,"bacon,",1,9
+23,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+20,custom,medium,HT,,0,8
+24,Chicago,large,D,,0,11
+2,custom,medium,HT,,0,8
+40,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+5,custom,medium,HT,"sausage, green pepper, pineapple,",3,11
+44,Chicago,large,D,,0,11
+47,custom,medium,HT,"bacon,",1,9
+1,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+20,Chicago,large,D,,0,11
+6,Chicago,large,D,,0,11
+39,custom,medium,HT,"bacon, green pepper, onion,",3,11
+45,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+9,Chicago,large,D,,0,11
+30,custom,medium,D,,0,8
+9,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+35,custom,medium,D,"onion, sausage,",2,10
+20,custom,medium,D,"onion,",1,9
+4,custom,medium,HT,"sausage,",1,9
+40,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+46,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+29,custom,medium,HT,,0,8
+27,custom,medium,HT,"peppeoni, green pepper, sausage,",3,11
+37,Student,medium,HT,"onion, pepperoni, tomato",0,10
+24,Chicago,large,D,,0,11
+17,custom,medium,HT,,0,8
+3,custom,medium,HT,"tomato, green pepper,",2,10
+15,custom,medium,HT,"peppeoni, sausage, onion,",3,11
+29,custom,medium,D,"pineapple,",1,9
+23,custom,medium,D,"bacon, peppeoni, peppeoni,",3,11
+34,custom,medium,HT,"tomato, onion,",2,10
+10,custom,medium,D,,0,8
+40,custom,medium,HT,,0,8
+35,Mixed,large,HT,"onion, pepperoni, tomato",0,10
+33,custom,medium,HT,,0,8
+5,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+26,custom,medium,HT,"peppeoni,",1,9
+12,custom,medium,HT,"bacon,",1,9
+38,Breakfast,large,HT,"sausage, bacon, tomato",0,10
+18,custom,medium,HT,"bacon, pineapple, peppeoni,",3,11
+38,custom,medium,D,"green pepper, onion,",2,10
+35,Breakfast,large,HT,"sausage, bacon, tomato",0,10
+46,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+25,custom,medium,HT,"sausage,",1,9
+9,Chicago,large,D,,0,11
+30,Student,medium,HT,"onion, pepperoni, tomato",0,10
+46,custom,medium,D,,0,8
+47,custom,medium,D,,0,8
+8,custom,medium,HT,,0,8
+44,custom,medium,HT,"sausage, sausage, pineapple,",3,11
+37,Hawaiian,large,HT,"pineapple, bacon, tomato",0,10
+17,Chicago,large,D,,0,11
+18,Chicago,large,D,,0,11
+34,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+8,custom,medium,HT,"tomato, tomato, onion,",3,11
+46,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+39,Hawaiian,large,HT,"pineapple, bacon, tomato",0,10
+27,custom,medium,D,,0,8
+24,custom,medium,HT,"pineapple, green pepper,",2,10
+30,custom,medium,D,"peppeoni, sausage, tomato,",3,11
+35,custom,medium,HT,"peppeoni, pineapple,",2,10
+19,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+7,Hawaiian,large,HT,"pineapple, bacon, tomato",0,10
+36,Chicago,large,D,,0,11
+36,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+25,Mixed,large,HT,"onion, pepperoni, tomato",0,10
+14,Chicago,large,D,,0,11
+28,custom,medium,D,"pineapple,",1,9
+6,custom,medium,D,"tomato, sausage, peppeoni,",3,11
+28,custom,medium,HT,"bacon, pineapple,",2,10
+25,custom,medium,D,"green pepper,",1,9
+7,custom,medium,HT,"sausage, bacon,",2,10
+25,custom,medium,D,,0,8
+11,Student,medium,HT,"onion, pepperoni, tomato",0,10
+22,custom,medium,HT,"pineapple, pineapple,",2,10
+44,custom,medium,HT,"green pepper,",1,9
+4,custom,medium,HT,,0,8
+36,Hawaiian,large,HT,"pineapple, bacon, tomato",0,10
+21,custom,medium,D,"pineapple,",1,9
+4,custom,medium,HT,,0,8
+13,custom,medium,D,"green pepper, tomato,",2,10
+38,custom,medium,D,,0,8
+6,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+39,custom,medium,HT,"sausage,",1,9
+38,Chicago,large,D,,0,11
+41,custom,medium,HT,,0,8
+32,custom,medium,HT,"onion, green pepper, peppeoni,",3,11
+17,custom,medium,D,"peppeoni, bacon,",2,10
+13,custom,medium,HT,"peppeoni,",1,9
+7,Student,medium,HT,"onion, pepperoni, tomato",0,10
+31,custom,medium,HT,,0,8
+49,custom,medium,D,"pineapple,",1,9
+1,Breakfast,large,HT,"sausage, bacon, tomato",0,10
+9,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+28,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+38,Student,medium,HT,"onion, pepperoni, tomato",0,10
+14,Breakfast,large,HT,"sausage, bacon, tomato",0,10
+34,custom,medium,D,,0,8
+25,custom,medium,HT,"peppeoni,",1,9
+32,custom,medium,D,"green pepper, pineapple,",2,10
+15,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+39,custom,medium,HT,"tomato, peppeoni,",2,10
+9,Chicago,large,D,,0,11
+34,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+27,custom,medium,HT,,0,8
+16,custom,medium,HT,"peppeoni, pineapple, sausage,",3,11
+24,custom,medium,D,,0,8
+9,custom,medium,HT,"peppeoni, onion, pineapple,",3,11
+17,Mixed,large,HT,"onion, pepperoni, tomato",0,10
+15,custom,medium,HT,"pineapple, pineapple,",2,10
+36,Chicago,large,D,,0,11
+7,custom,medium,D,,0,8
+29,Breakfast,large,HT,"sausage, bacon, tomato",0,10
+21,Chicago,large,D,,0,11
+5,custom,medium,HT,,0,8
+24,Mixed,large,HT,"onion, pepperoni, tomato",0,10
+21,custom,medium,HT,"sausage, onion, green pepper,",3,11
+30,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+34,custom,medium,D,"bacon,",1,9
+39,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+26,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+38,Hawaiian,large,HT,"pineapple, bacon, tomato",0,10
+1,custom,medium,HT,"green pepper, bacon, bacon,",3,11
+12,Chicago,large,D,,0,11
+30,custom,medium,D,,0,8
+31,custom,medium,D,,0,8
+34,custom,medium,HT,"peppeoni,",1,9
+48,custom,medium,D,"sausage, bacon, tomato,",3,11
+15,custom,medium,HT,"pineapple, pineapple, tomato,",3,11
+34,Hawaiian,large,HT,"pineapple, bacon, tomato",0,10
+7,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+37,custom,medium,HT,"green pepper,",1,9
+44,custom,medium,D,"green pepper,",1,9
+21,custom,medium,D,"pineapple, onion, tomato,",3,11
+26,custom,medium,D,,0,8
+39,Chicago,large,D,,0,11
+40,custom,medium,D,"sausage,",1,9
+6,custom,medium,HT,,0,8
+10,custom,medium,HT,,0,8
+11,Chicago,large,D,,0,11
+11,Chicago,large,D,,0,11
+20,custom,medium,HT,"bacon,",1,9
+18,custom,medium,HT,"pineapple, green pepper, pineapple,",3,11
+37,Mixed,large,HT,"onion, pepperoni, tomato",0,10
+6,custom,medium,HT,"peppeoni,",1,9
+48,Chicago,large,D,,0,11
+3,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+23,custom,medium,HT,"green pepper,",1,9
+17,custom,medium,HT,"onion,",1,9
+27,custom,medium,HT,"onion, pineapple, sausage,",3,11
+37,custom,medium,HT,"pineapple, pineapple, bacon,",3,11
+10,custom,medium,D,,0,8
+19,custom,medium,D,"onion, pineapple, tomato,",3,11
+19,custom,medium,HT,,0,8
+7,custom,medium,HT,,0,8
+38,custom,medium,HT,"sausage, peppeoni, onion,",3,11
+17,Chicago,large,D,,0,11
+47,custom,medium,HT,"bacon,",1,9
+41,Student,medium,HT,"onion, pepperoni, tomato",0,10
+47,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+29,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+19,custom,medium,HT,"onion, bacon, sausage,",3,11
+5,Student,medium,HT,"onion, pepperoni, tomato",0,10
+41,custom,medium,HT,"onion,",1,9
+19,custom,medium,HT,"peppeoni, pineapple, pineapple,",3,11
+15,custom,medium,HT,"tomato,",1,9
+45,custom,medium,HT,"peppeoni, sausage, bacon,",3,11
+48,Chicago,large,D,,0,11
+33,custom,medium,HT,"tomato, bacon,",2,10
+47,custom,medium,HT,"bacon, peppeoni,",2,10
+7,custom,medium,HT,"tomato, onion,",2,10
+8,Hawaiian,large,HT,"pineapple, bacon, tomato",0,10
+7,Hawaiian,large,HT,"pineapple, bacon, tomato",0,10
+30,Chicago,large,D,,0,11
+44,custom,medium,HT,"tomato,",1,9
+35,custom,medium,HT,"tomato, onion,",2,10
+24,custom,medium,HT,"bacon,",1,9
+9,custom,medium,HT,"pineapple,",1,9
+37,Chicago,large,D,,0,11
+3,custom,medium,HT,"peppeoni, tomato, bacon,",3,11
+15,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+42,custom,medium,D,,0,8
+39,custom,medium,D,"green pepper, bacon,",2,10
+33,custom,medium,HT,"tomato, onion,",2,10
+9,Breakfast,large,HT,"sausage, bacon, tomato",0,10
+12,custom,medium,HT,,0,8
+27,Mixed,large,HT,"onion, pepperoni, tomato",0,10
+22,custom,medium,HT,"green pepper,",1,9
+39,Mixed,large,HT,"onion, pepperoni, tomato",0,10
+23,custom,medium,HT,"onion, sausage,",2,10
+40,custom,medium,HT,"peppeoni, bacon,",2,10
+45,Breakfast,large,HT,"sausage, bacon, tomato",0,10
+9,Student,medium,HT,"onion, pepperoni, tomato",0,10
+48,custom,medium,HT,"peppeoni,",1,9
+29,Hawaiian,large,HT,"pineapple, bacon, tomato",0,10
+5,custom,medium,HT,"pineapple, pineapple,",2,10
+37,custom,medium,D,"green pepper, bacon, pineapple,",3,11
+37,Chicago,large,D,,0,11
+35,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+1,custom,medium,HT,"peppeoni, onion,",2,10
+8,custom,medium,HT,"bacon, pineapple, pineapple,",3,11
+47,custom,medium,HT,"sausage, bacon,",2,10
+35,custom,medium,HT,"onion, pineapple,",2,10
+24,Chicago,large,D,,0,11
+2,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+45,Chicago,large,D,,0,11
+27,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+21,Chicago,large,D,,0,11
+36,custom,medium,HT,,0,8
+10,custom,medium,HT,"green pepper, bacon, green pepper,",3,11
+41,custom,medium,HT,"onion,",1,9
+12,custom,medium,HT,"green pepper, bacon, sausage,",3,11
+7,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+36,custom,medium,HT,"onion, bacon, bacon,",3,11
+49,custom,medium,HT,"tomato, bacon,",2,10
+7,custom,medium,HT,"sausage, peppeoni, bacon,",3,11
+41,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+46,custom,medium,D,"sausage, tomato,",2,10
+39,custom,medium,HT,"sausage,",1,9
+31,custom,medium,HT,"bacon,",1,9
+20,Chicago,large,D,,0,11
+11,custom,medium,HT,"onion, pineapple,",2,10
+4,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+34,custom,medium,HT,,0,8
+42,custom,medium,D,"tomato, peppeoni, onion,",3,11
+23,custom,medium,HT,"onion,",1,9
+3,Chicago,large,D,,0,11
+28,custom,medium,HT,"sausage,",1,9
+15,custom,medium,HT,,0,8
+41,Chicago,large,D,,0,11
+41,custom,medium,HT,,0,8
+49,Chicago,large,D,,0,11
+12,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+23,custom,medium,HT,"tomato, onion, onion,",3,11
+39,Chicago,large,D,,0,11
+24,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+8,custom,medium,HT,"green pepper, sausage, pineapple,",3,11
+9,custom,medium,D,"onion, tomato,",2,10
+44,custom,medium,HT,,0,8
+35,custom,medium,HT,"sausage,",1,9
+10,custom,medium,D,,0,8
+40,custom,medium,HT,,0,8
+17,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+34,custom,medium,D,"onion, sausage,",2,10
+39,custom,medium,HT,"bacon,",1,9
+34,custom,medium,HT,"onion, peppeoni,",2,10
+35,Hawaiian,large,HT,"pineapple, bacon, tomato",0,10
+18,custom,medium,HT,"peppeoni, green pepper, green pepper,",3,11
+36,custom,medium,HT,"bacon,",1,9
+32,custom,medium,D,"green pepper, green pepper,",2,10
+37,custom,medium,HT,"peppeoni,",1,9
+7,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+11,Student,medium,HT,"onion, pepperoni, tomato",0,10
+9,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+2,custom,medium,HT,"peppeoni,",1,9
+2,Chicago,large,D,,0,11
+26,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+14,custom,medium,D,"tomato,",1,9
+19,custom,medium,HT,"pineapple, peppeoni, green pepper,",3,11
+1,custom,medium,HT,"bacon, pineapple,",2,10
+18,custom,medium,HT,,0,8
+28,custom,medium,D,"pineapple, sausage, sausage,",3,11
+21,custom,medium,HT,,0,8
+46,Mixed,large,HT,"onion, pepperoni, tomato",0,10
+31,Breakfast,large,HT,"sausage, bacon, tomato",0,10
+43,Chicago,large,D,,0,11
+10,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+9,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+34,custom,medium,D,"peppeoni, sausage, pineapple,",3,11
+6,custom,medium,D,,0,8
+17,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+7,custom,medium,HT,"sausage, sausage, green pepper,",3,11
+35,Chicago,large,D,,0,11
+18,custom,medium,D,"peppeoni,",1,9
+32,custom,medium,HT,"bacon, bacon, pineapple,",3,11
+5,custom,medium,D,,0,8
+42,custom,medium,HT,"pineapple,",1,9
+28,custom,medium,HT,"bacon, peppeoni, pineapple,",3,11
+16,custom,medium,HT,"tomato, green pepper,",2,10
+31,custom,medium,HT,"sausage, bacon,",2,10
+18,custom,medium,HT,,0,8
+49,Hawaiian,large,HT,"pineapple, bacon, tomato",0,10
+11,Chicago,large,D,,0,11
+13,custom,medium,HT,"bacon,",1,9
+48,Hawaiian,large,HT,"pineapple, bacon, tomato",0,10
+17,custom,medium,HT,"bacon,",1,9
+45,custom,medium,HT,"bacon,",1,9
+19,custom,medium,HT,"onion, tomato, onion,",3,11
+17,custom,medium,HT,"green pepper, tomato, bacon,",3,11
+18,custom,medium,HT,,0,8
+36,custom,medium,HT,,0,8
+4,custom,medium,HT,"pineapple, tomato,",2,10
+17,custom,medium,D,"tomato,",1,9
+7,custom,medium,HT,"pineapple,",1,9
+27,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+44,Chicago,large,D,,0,11
+25,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+16,Chicago,large,D,,0,11
+41,custom,medium,D,"pineapple,",1,9
+30,Chicago,large,D,,0,11
+29,custom,medium,HT,"onion,",1,9
+5,custom,medium,HT,"peppeoni, green pepper,",2,10
+28,custom,medium,HT,"tomato,",1,9
+10,Chicago,large,D,,0,11
+22,custom,medium,HT,"pineapple, green pepper,",2,10
+11,Hawaiian,large,HT,"pineapple, bacon, tomato",0,10
+7,custom,medium,HT,"onion, bacon,",2,10
+31,custom,medium,HT,"onion, pineapple,",2,10
+17,custom,medium,D,,0,8
+39,custom,medium,D,"sausage, sausage, green pepper,",3,11
+40,custom,medium,D,"bacon,",1,9
+16,custom,medium,HT,,0,8
+47,custom,medium,HT,"pineapple,",1,9
+7,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+41,custom,medium,HT,"sausage,",1,9
+43,custom,medium,HT,"green pepper, onion, onion,",3,11
+9,custom,medium,HT,"peppeoni, pineapple,",2,10
+9,custom,medium,HT,"green pepper, tomato, sausage,",3,11
+1,custom,medium,HT,"pineapple,",1,9
+16,Chicago,large,D,,0,11
+5,Chicago,large,D,,0,11
+33,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+6,custom,medium,D,,0,8
+26,Student,medium,HT,"onion, pepperoni, tomato",0,10
+38,custom,medium,HT,"onion,",1,9
+34,custom,medium,HT,"pineapple,",1,9
+15,Hawaiian,large,HT,"pineapple, bacon, tomato",0,10
+11,custom,medium,HT,"sausage,",1,9
+44,custom,medium,HT,"tomato,",1,9
+45,Student,medium,HT,"onion, pepperoni, tomato",0,10
+42,custom,medium,HT,"sausage, onion, pineapple,",3,11
+31,Chicago,large,D,,0,11
+21,custom,medium,HT,"bacon, tomato,",2,10
+33,Chicago,large,D,,0,11
+40,custom,medium,HT,,0,8
+35,Chicago,large,D,,0,11
+34,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+49,Breakfast,large,HT,"sausage, bacon, tomato",0,10
+33,custom,medium,D,"sausage, tomato,",2,10
+4,Student,medium,HT,"onion, pepperoni, tomato",0,10
+13,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+20,custom,medium,HT,"sausage, tomato, onion,",3,11
+25,Chicago,large,D,,0,11
+29,custom,medium,HT,"peppeoni,",1,9
+41,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+9,Chicago,large,D,,0,11
+22,custom,medium,HT,"bacon, bacon, peppeoni,",3,11
+24,custom,medium,HT,"peppeoni, pineapple,",2,10
+4,Student,medium,HT,"onion, pepperoni, tomato",0,10
+19,Chicago,large,D,,0,11
+46,custom,medium,HT,"green pepper, sausage, bacon,",3,11
+10,Mixed,large,HT,"onion, pepperoni, tomato",0,10
+24,custom,medium,HT,,0,8
+5,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+9,custom,medium,HT,"onion, tomato, onion,",3,11
+20,custom,medium,HT,,0,8
+31,custom,medium,HT,"sausage,",1,9
+35,custom,medium,HT,"onion, green pepper, green pepper,",3,11
+5,custom,medium,D,"pineapple,",1,9
+34,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+40,custom,medium,HT,"bacon, onion,",2,10
+7,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+6,custom,medium,HT,,0,8
+20,custom,medium,D,"bacon, pineapple, pineapple,",3,11
+34,custom,medium,HT,"bacon, bacon, pineapple,",3,11
+11,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+7,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+15,custom,medium,HT,"onion, tomato,",2,10
+45,custom,medium,HT,"peppeoni, green pepper, bacon,",3,11
+28,custom,medium,HT,"pineapple,",1,9
+12,custom,medium,HT,"pineapple,",1,9
+41,custom,medium,HT,"pineapple,",1,9
+46,custom,medium,HT,,0,8
+30,custom,medium,HT,"onion, peppeoni, tomato,",3,11
+26,Mixed,large,HT,"onion, pepperoni, tomato",0,10
+47,custom,medium,HT,"onion,",1,9
+33,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+15,custom,medium,HT,"onion,",1,9
+37,Mixed,large,HT,"onion, pepperoni, tomato",0,10
+17,Chicago,large,D,,0,11
+26,Breakfast,large,HT,"sausage, bacon, tomato",0,10
+47,custom,medium,HT,"green pepper, bacon,",2,10
+27,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+9,Chicago,large,D,,0,11
+34,Mixed,large,HT,"onion, pepperoni, tomato",0,10
+37,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+8,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+48,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+27,custom,medium,HT,,0,8
+19,custom,medium,HT,"green pepper, green pepper, peppeoni,",3,11
+24,custom,medium,HT,"tomato, green pepper,",2,10
+24,custom,medium,D,"peppeoni,",1,9
+24,custom,medium,D,"green pepper,",1,9
+33,custom,medium,D,,0,8
+42,custom,medium,HT,"onion, green pepper,",2,10
+48,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+37,custom,medium,HT,,0,8
+23,Hawaiian,large,HT,"pineapple, bacon, tomato",0,10
+16,Breakfast,large,HT,"sausage, bacon, tomato",0,10
+39,custom,medium,HT,"onion, green pepper, tomato,",3,11
+7,custom,medium,HT,"green pepper, pineapple,",2,10
+33,Chicago,large,D,,0,11
+26,custom,medium,HT,"bacon,",1,9
+6,custom,medium,D,"sausage, tomato,",2,10
+37,custom,medium,HT,"sausage, peppeoni, onion,",3,11
+44,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+21,custom,medium,HT,"green pepper, onion,",2,10
+23,Mixed,large,HT,"onion, pepperoni, tomato",0,10
+18,custom,medium,HT,"tomato, sausage, bacon,",3,11
+49,custom,medium,HT,"onion, onion, tomato,",3,11
+31,custom,medium,D,"sausage, bacon,",2,10
+35,Mixed,large,HT,"onion, pepperoni, tomato",0,10
+13,custom,medium,HT,,0,8
+34,Student,medium,HT,"onion, pepperoni, tomato",0,10
+47,custom,medium,HT,"sausage, onion, sausage,",3,11
+17,custom,medium,D,,0,8
+20,custom,medium,D,,0,8
+29,Chicago,large,D,,0,11
+31,custom,medium,HT,"sausage,",1,9
+42,custom,medium,HT,"green pepper,",1,9
+5,custom,medium,HT,"green pepper, peppeoni, peppeoni,",3,11
+32,custom,medium,HT,"onion, green pepper,",2,10
+46,custom,medium,HT,"tomato,",1,9
+49,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+12,custom,medium,HT,"bacon, tomato,",2,10
+42,custom,medium,HT,,0,8
+16,custom,medium,HT,"pineapple, pineapple,",2,10
+7,custom,medium,HT,"peppeoni,",1,9
+40,custom,medium,HT,"onion, peppeoni,",2,10
+20,Chicago,large,D,,0,11
+37,Student,medium,HT,"onion, pepperoni, tomato",0,10
+44,Chicago,large,D,,0,11
+6,custom,medium,HT,"onion, peppeoni,",2,10
+13,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+25,custom,medium,HT,,0,8
+11,custom,medium,D,,0,8
+3,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+24,Chicago,large,D,,0,11
+19,custom,medium,D,"bacon,",1,9
+30,custom,medium,HT,"onion,",1,9
+25,Hawaiian,large,HT,"pineapple, bacon, tomato",0,10
+24,custom,medium,HT,,0,8
+17,custom,medium,D,"sausage, tomato,",2,10
+16,Breakfast,large,HT,"sausage, bacon, tomato",0,10
+31,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+36,custom,medium,D,"sausage,",1,9
+31,custom,medium,HT,,0,8
+5,Chicago,large,D,,0,11
+15,custom,medium,HT,"tomato,",1,9
+27,custom,medium,HT,"onion, bacon, peppeoni,",3,11
+30,custom,medium,HT,"pineapple, bacon, sausage,",3,11
+49,Chicago,large,D,,0,11
+36,custom,medium,HT,"sausage, peppeoni, pineapple,",3,11
+42,Hawaiian,large,HT,"pineapple, bacon, tomato",0,10
+42,Student,medium,HT,"onion, pepperoni, tomato",0,10
+26,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+40,Breakfast,large,HT,"sausage, bacon, tomato",0,10
+24,custom,medium,HT,,0,8
+26,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+39,custom,medium,HT,"bacon, green pepper,",2,10
+35,Hawaiian,large,HT,"pineapple, bacon, tomato",0,10
+1,Breakfast,large,HT,"sausage, bacon, tomato",0,10
+11,custom,medium,HT,"green pepper,",1,9
+13,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+12,Chicago,large,D,,0,11
+17,custom,medium,HT,"pineapple, onion, sausage,",3,11
+49,custom,medium,HT,"pineapple, onion, onion,",3,11
+41,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+28,custom,medium,HT,"sausage, tomato,",2,10
+10,custom,medium,HT,"peppeoni, bacon,",2,10
+11,custom,medium,HT,"tomato, tomato, pineapple,",3,11
+45,Chicago,large,D,,0,11
+42,Hawaiian,large,HT,"pineapple, bacon, tomato",0,10
+11,custom,medium,HT,"onion,",1,9
+10,custom,medium,HT,"peppeoni, tomato, tomato,",3,11
+3,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+31,custom,medium,HT,"onion,",1,9
+37,custom,medium,D,"sausage, pineapple,",2,10
+28,custom,medium,HT,"pineapple,",1,9
+1,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+31,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+16,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+41,Chicago,large,D,,0,11
+9,custom,medium,D,"onion, sausage, tomato,",3,11
+10,custom,medium,HT,,0,8
+31,Breakfast,large,HT,"sausage, bacon, tomato",0,10
+25,Mixed,large,HT,"onion, pepperoni, tomato",0,10
+26,custom,medium,HT,"sausage,",1,9
+26,custom,medium,HT,"sausage, tomato, green pepper,",3,11
+42,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+3,Hawaiian,large,HT,"pineapple, bacon, tomato",0,10
+15,Chicago,large,D,,0,11
+42,Chicago,large,D,,0,11
+15,custom,medium,D,,0,8
+46,custom,medium,D,"pineapple, bacon,",2,10
+5,Chicago,large,D,,0,11
+7,Hawaiian,large,HT,"pineapple, bacon, tomato",0,10
+1,Student,medium,HT,"onion, pepperoni, tomato",0,10
+20,custom,medium,D,"peppeoni, green pepper, sausage,",3,11
+5,Chicago,large,D,,0,11
+38,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+20,custom,medium,HT,"bacon,",1,9
+20,custom,medium,HT,"tomato, pineapple,",2,10
+34,custom,medium,HT,"bacon, green pepper, green pepper,",3,11
+40,custom,medium,D,"peppeoni, bacon,",2,10
+43,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+5,custom,medium,HT,,0,8
+46,Chicago,large,D,,0,11
+13,custom,medium,D,"bacon,",1,9
+30,custom,medium,D,"pineapple, bacon,",2,10
+24,custom,medium,HT,"bacon, sausage, onion,",3,11
+39,custom,medium,HT,,0,8
+18,Chicago,large,D,,0,11
+29,custom,medium,D,"peppeoni, onion, tomato,",3,11
+2,custom,medium,HT,,0,8
+44,custom,medium,HT,"bacon, peppeoni,",2,10
+29,custom,medium,HT,,0,8
+47,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+4,Mixed,large,HT,"onion, pepperoni, tomato",0,10
+22,Hawaiian,large,HT,"pineapple, bacon, tomato",0,10
+8,custom,medium,HT,"green pepper,",1,9
+16,custom,medium,HT,"sausage, pineapple, onion,",3,11
+5,Mixed,large,HT,"onion, pepperoni, tomato",0,10
+16,Chicago,large,D,,0,11
+12,custom,medium,HT,,0,8
+29,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+4,custom,medium,HT,"peppeoni,",1,9
+39,custom,medium,HT,"green pepper,",1,9
+42,custom,medium,D,,0,8
+42,custom,medium,HT,"pineapple, tomato,",2,10
+23,Breakfast,large,HT,"sausage, bacon, tomato",0,10
+15,custom,medium,HT,"green pepper,",1,9
+29,custom,medium,D,"sausage, green pepper, peppeoni,",3,11
+37,custom,medium,HT,,0,8
+47,custom,medium,HT,"bacon, tomato, tomato,",3,11
+48,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+9,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+30,custom,medium,D,"sausage,",1,9
+8,custom,medium,HT,,0,8
+35,custom,medium,HT,"peppeoni, green pepper, sausage,",3,11
+9,custom,medium,HT,"tomato, sausage, bacon,",3,11
+42,Mixed,large,HT,"onion, pepperoni, tomato",0,10
+16,custom,medium,HT,"sausage,",1,9
+9,Chicago,large,D,,0,11
+24,custom,medium,HT,"pineapple, green pepper,",2,10
+21,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+10,Breakfast,large,HT,"sausage, bacon, tomato",0,10
+8,custom,medium,HT,"peppeoni, peppeoni,",2,10
+4,custom,medium,HT,"sausage, sausage, tomato,",3,11
+1,Mixed,large,HT,"onion, pepperoni, tomato",0,10
+1,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+44,custom,medium,HT,"peppeoni,",1,9
+20,Student,medium,HT,"onion, pepperoni, tomato",0,10
+39,custom,medium,HT,,0,8
+30,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+35,custom,medium,HT,"peppeoni,",1,9
+24,Mixed,large,HT,"onion, pepperoni, tomato",0,10
+41,custom,medium,HT,"tomato, pineapple, pineapple,",3,11
+49,custom,medium,D,,0,8
+19,custom,medium,D,"sausage, sausage, tomato,",3,11
+45,custom,medium,D,,0,8
+23,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+39,custom,medium,HT,"peppeoni, bacon, peppeoni,",3,11
+2,custom,medium,HT,"onion, green pepper, sausage,",3,11
+20,custom,medium,HT,"onion, peppeoni,",2,10
+49,custom,medium,HT,,0,8
+39,Chicago,large,D,,0,11
+41,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+13,Chicago,large,D,,0,11
+37,custom,medium,HT,,0,8
+28,Mixed,large,HT,"onion, pepperoni, tomato",0,10
+23,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+20,custom,medium,HT,,0,8
+45,Mixed,large,HT,"onion, pepperoni, tomato",0,10
+34,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+3,custom,medium,HT,,0,8
+44,Chicago,large,D,,0,11
+8,custom,medium,HT,"peppeoni,",1,9
+17,custom,medium,HT,,0,8
+20,custom,medium,HT,"green pepper, green pepper, tomato,",3,11
+29,Chicago,large,D,,0,11
+18,custom,medium,D,"bacon, pineapple,",2,10
+33,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+49,custom,medium,D,"pineapple,",1,9
+41,Chicago,large,D,,0,11
+28,custom,medium,HT,"peppeoni, pineapple, green pepper,",3,11
+28,Student,medium,HT,"onion, pepperoni, tomato",0,10
+6,custom,medium,HT,"bacon, bacon, tomato,",3,11
+26,custom,medium,HT,"green pepper, sausage, sausage,",3,11
+19,custom,medium,HT,"sausage, pineapple,",2,10
+21,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+27,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+7,custom,medium,D,,0,8
+25,custom,medium,HT,"pineapple,",1,9
+15,custom,medium,HT,,0,8
+49,custom,medium,HT,,0,8
+34,custom,medium,HT,"sausage,",1,9
+18,custom,medium,D,"pineapple, green pepper, green pepper,",3,11
+13,custom,medium,HT,"sausage, tomato,",2,10
+3,custom,medium,HT,,0,8
+34,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+34,custom,medium,HT,"sausage, peppeoni, sausage,",3,11
+28,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+16,custom,medium,HT,,0,8
+4,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+23,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+35,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+5,custom,medium,HT,,0,8
+37,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+13,custom,medium,HT,"green pepper, pineapple,",2,10
+7,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+41,custom,medium,HT,"green pepper,",1,9
+18,custom,medium,HT,"bacon, pineapple,",2,10
+16,custom,medium,HT,"peppeoni, onion,",2,10
+24,Chicago,large,D,,0,11
+14,Mixed,large,HT,"onion, pepperoni, tomato",0,10
+36,custom,medium,D,"pineapple, bacon,",2,10
+35,custom,medium,HT,"peppeoni, onion,",2,10
+30,custom,medium,HT,"onion, pineapple,",2,10
+34,custom,medium,HT,"onion,",1,9
+19,Hawaiian,large,HT,"pineapple, bacon, tomato",0,10
+27,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+15,custom,medium,HT,"green pepper,",1,9
+38,custom,medium,HT,,0,8
+8,custom,medium,HT,"green pepper, peppeoni, pineapple,",3,11
+39,custom,medium,HT,"peppeoni, bacon, onion,",3,11
+33,Breakfast,large,HT,"sausage, bacon, tomato",0,10
+30,custom,medium,HT,"pineapple, bacon,",2,10
+38,custom,medium,HT,"sausage,",1,9
+48,custom,medium,HT,"pineapple,",1,9
+6,Chicago,large,D,,0,11
+47,custom,medium,HT,"pineapple, tomato, pineapple,",3,11
+36,Student,medium,HT,"onion, pepperoni, tomato",0,10
+26,custom,medium,D,"pineapple, peppeoni,",2,10
+11,custom,medium,HT,"peppeoni, peppeoni,",2,10
+35,custom,medium,HT,"peppeoni, peppeoni,",2,10
+3,custom,medium,D,"onion,",1,9
+1,custom,medium,HT,"bacon,",1,9
+45,custom,medium,HT,"green pepper, sausage,",2,10
+19,Chicago,large,D,,0,11
+43,Chicago,large,D,,0,11
+39,Chicago,large,D,,0,11
+47,custom,medium,D,"tomato, peppeoni, green pepper,",3,11
+36,Student,medium,HT,"onion, pepperoni, tomato",0,10
+36,custom,medium,HT,,0,8
+29,Hawaiian,large,HT,"pineapple, bacon, tomato",0,10
+26,Breakfast,large,HT,"sausage, bacon, tomato",0,10
+43,custom,medium,HT,"onion,",1,9
+37,custom,medium,HT,,0,8
+33,custom,medium,D,,0,8
+32,custom,medium,HT,"tomato, tomato,",2,10
+47,Mixed,large,HT,"onion, pepperoni, tomato",0,10
+30,custom,medium,D,"green pepper, onion, bacon,",3,11
+7,Chicago,large,D,,0,11
+7,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+7,Chicago,large,D,,0,11
+33,custom,medium,HT,"pineapple,",1,9
+35,Mixed,large,HT,"onion, pepperoni, tomato",0,10
+31,custom,medium,D,,0,8
+25,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+37,Chicago,large,D,,0,11
+21,custom,medium,HT,"pineapple, sausage, tomato,",3,11
+7,custom,medium,HT,,0,8
+3,Chicago,large,D,,0,11
+21,custom,medium,D,,0,8
+35,custom,medium,HT,"peppeoni, green pepper,",2,10
+21,custom,medium,HT,"bacon, pineapple, tomato,",3,11
+37,Chicago,large,D,,0,11
+49,custom,medium,HT,"tomato, pineapple, green pepper,",3,11
+28,custom,medium,HT,"bacon,",1,9
+40,custom,medium,HT,"sausage, onion, sausage,",3,11
+31,custom,medium,HT,"bacon,",1,9
+29,custom,medium,D,"peppeoni,",1,9
+36,custom,medium,HT,"sausage,",1,9
+47,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+8,custom,medium,HT,,0,8
+42,custom,medium,D,"green pepper, tomato,",2,10
+2,custom,medium,D,"bacon, sausage, pineapple,",3,11
+46,custom,medium,D,"green pepper,",1,9
+44,custom,medium,D,,0,8
+38,custom,medium,D,,0,8
+22,Breakfast,large,HT,"sausage, bacon, tomato",0,10
+24,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+7,Chicago,large,D,,0,11
+26,custom,medium,HT,"sausage, sausage,",2,10
+21,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+37,custom,medium,HT,"peppeoni, tomato, tomato,",3,11
+32,custom,medium,HT,"green pepper, tomato, sausage,",3,11
+13,custom,medium,HT,"green pepper, peppeoni,",2,10
+28,Chicago,large,D,,0,11
+38,custom,medium,HT,"green pepper, onion,",2,10
+30,Chicago,large,D,,0,11
+23,Student,medium,HT,"onion, pepperoni, tomato",0,10
+46,custom,medium,HT,"pineapple,",1,9
+42,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+8,custom,medium,HT,,0,8
+1,Chicago,large,D,,0,11
+4,custom,medium,HT,"onion, bacon,",2,10
+2,custom,medium,HT,,0,8
+40,Hawaiian,large,HT,"pineapple, bacon, tomato",0,10
+35,Hawaiian,large,HT,"pineapple, bacon, tomato",0,10
+22,Chicago,large,D,,0,11
+8,custom,medium,HT,"pineapple, tomato, tomato,",3,11
+10,custom,medium,D,,0,8
+45,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+34,Mixed,large,HT,"onion, pepperoni, tomato",0,10
+37,custom,medium,HT,"green pepper, onion, onion,",3,11
+42,custom,medium,HT,"pineapple, bacon, pineapple,",3,11
+40,custom,medium,HT,"green pepper,",1,9
+31,custom,medium,D,"bacon,",1,9
+15,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+14,custom,medium,HT,"onion,",1,9
+36,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+12,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+2,custom,medium,HT,,0,8
+32,custom,medium,D,,0,8
+9,custom,medium,HT,,0,8
+21,Mixed,large,HT,"onion, pepperoni, tomato",0,10
+19,custom,medium,HT,"green pepper, tomato, onion,",3,11
+24,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+18,Student,medium,HT,"onion, pepperoni, tomato",0,10
+44,custom,medium,D,"pineapple, peppeoni,",2,10
+22,custom,medium,HT,"bacon, onion, tomato,",3,11
+40,custom,medium,D,,0,8
+5,custom,medium,HT,"pineapple,",1,9
+21,custom,medium,HT,,0,8
+14,custom,medium,D,"pineapple,",1,9
+20,Breakfast,large,HT,"sausage, bacon, tomato",0,10
+21,Mixed,large,HT,"onion, pepperoni, tomato",0,10
+43,custom,medium,D,"pineapple, green pepper, bacon,",3,11
+14,Chicago,large,D,,0,11
+42,custom,medium,HT,"onion, sausage, peppeoni,",3,11
+25,Chicago,large,D,,0,11
+11,custom,medium,HT,"tomato,",1,9
+26,Hawaiian,large,HT,"pineapple, bacon, tomato",0,10
+31,custom,medium,D,,0,8
+11,custom,medium,HT,"onion, green pepper, peppeoni,",3,11
+23,custom,medium,D,"tomato, green pepper,",2,10
+39,custom,medium,D,"bacon,",1,9
+35,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+49,custom,medium,HT,"tomato, pineapple,",2,10
+10,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+29,custom,medium,HT,"sausage,",1,9
+15,Student,medium,HT,"onion, pepperoni, tomato",0,10
+15,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+36,Breakfast,large,HT,"sausage, bacon, tomato",0,10
+16,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+21,custom,medium,HT,"sausage, peppeoni,",2,10
+34,Chicago,large,D,,0,11
+46,custom,medium,HT,"bacon,",1,9
+31,Chicago,large,D,,0,11
+2,Chicago,large,D,,0,11
+9,custom,medium,HT,"green pepper, onion,",2,10
+20,Breakfast,large,HT,"sausage, bacon, tomato",0,10
+40,custom,medium,HT,"bacon,",1,9
+32,custom,medium,D,"onion, bacon, pineapple,",3,11
+9,custom,medium,HT,,0,8
+3,custom,medium,HT,,0,8
+27,custom,medium,HT,,0,8
+40,custom,medium,HT,"onion,",1,9
+1,custom,medium,HT,"onion, sausage, sausage,",3,11
+11,custom,medium,HT,,0,8
+2,custom,medium,HT,"green pepper, tomato,",2,10
+11,custom,medium,HT,,0,8
+8,Chicago,large,D,,0,11
+43,custom,medium,HT,"pineapple, tomato,",2,10
+25,Veggie Lover,large,HT,"onion, tomato, green pepper",3,12
+11,Hawaiian,large,HT,"pineapple, bacon, tomato",0,10
+4,custom,medium,D,"pineapple,",1,9
+20,Chicago,large,D,,0,11
+25,Breakfast,large,HT,"sausage, bacon, tomato",0,10
+18,custom,medium,HT,"peppeoni, sausage,",2,10
+31,Chicago,large,D,,0,11
+22,custom,medium,HT,,0,8
+24,custom,medium,HT,"peppeoni, onion,",2,10
+33,custom,medium,HT,"onion,",1,9
+36,custom,medium,HT,"green pepper,",1,9
+16,custom,medium,HT,"peppeoni, sausage,",2,10
+45,custom,medium,D,"green pepper, bacon,",2,10
+15,custom,medium,HT,,0,8
+26,custom,medium,HT,"onion, onion, onion,",3,11
+13,custom,medium,D,,0,8
+16,custom,medium,HT,,0,8
+39,custom,medium,D,"pineapple,",1,9
+5,Chicago,large,D,,0,11
+21,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+48,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+43,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+17,Hawaiian,large,HT,"pineapple, bacon, tomato",0,10
+37,custom,medium,HT,"peppeoni, pineapple,",2,10
+30,custom,medium,HT,"pineapple, peppeoni,",2,10
+34,Mixed,large,HT,"onion, pepperoni, tomato",0,10
+48,custom,medium,HT,,0,8
+49,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+34,custom,medium,HT,"tomato,",1,9
+48,Chicago,large,D,,0,11
+8,Breakfast,large,HT,"sausage, bacon, tomato",0,10
+15,custom,medium,HT,,0,8
+35,Chicago,large,D,,0,11
+19,custom,medium,HT,"green pepper, onion,",2,10
+15,custom,medium,HT,,0,8
+5,custom,medium,HT,"sausage, sausage, green pepper,",3,11
+2,custom,medium,HT,,0,8
+31,custom,medium,HT,"onion,",1,9
+23,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+16,Meat Lover,large,HT,"pepperoni, sausage, bacon",3,12
+5,Chicago,large,D,,0,11
+8,Breakfast,large,HT,"sausage, bacon, tomato",0,10
+37,Mixed,large,HT,"onion, pepperoni, tomato",0,10
+38,custom,medium,HT,"onion,",1,9
+1,custom,medium,D,"tomato, tomato,",2,10
+13,custom,medium,HT,"peppeoni, green pepper, peppeoni,",3,11
+14,Breakfast,large,HT,"sausage, bacon, tomato",0,10
