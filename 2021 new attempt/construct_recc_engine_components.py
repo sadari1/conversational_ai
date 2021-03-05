@@ -39,8 +39,8 @@ customer_array = []
 for f in range(2000):
     c_id_ = np.random.randint(0, 51, 1)[0]
     p_id_ = np.random.randint(0, len(products), 1)[0]
-    month = np.random.randint(0, 13, 1)[0]
-    day = np.random.randint(0, 31, 1)[0]
+    month = np.random.randint(1, 13, 1)[0]
+    day = np.random.randint(1, 31, 1)[0]
 
     entry = [c_id_, p_id_, f"{month}-{day}-2020"]
     customer_array.append(entry)
