@@ -11,14 +11,65 @@ def arr_to_str(arr, delim = ' '):
     return string
 
 #%%
+colors = ['red', 'green', 'blue']
+clothes = ['shirt', 'dress', 'gown', 'jacket']
+sleeves = ['short', 'medium', 'long', 'none']
+brand = ['A', 'B', 'C']
 
+product_column = ['p_id', 'brand', 'clothing', 'sleeve', 'color']
+
+product_array = []
+for f in range(1000):
+    id_ = f
+    brand_ = brand[np.random.randint(0, len(brand), 1)[0]]
+    sleeve_ = sleeves[np.random.randint(0, len(sleeves), 1)[0]]
+    clothes_ = clothes[np.random.randint(0, len(clothes), 1)[0]]
+    colors_ = colors[np.random.randint(0, len(colors), 1)[0]]
+
+    entry = [id_, brand_, clothes_, sleeve_, colors_]
+    product_array.append(entry)
 
 #%%
+products = pd.DataFrame(product_array, columns=product_column)
+products.to_csv("products.csv", index=False)
+#%%
+customer_column = ['c_id', 'p_id', 'date']
 
+customer_array = []
+for f in range(2000):
+    c_id_ = np.random.randint(0, 51, 1)[0]
+    p_id_ = np.random.randint(0, len(products), 1)[0]
+    month = np.random.randint(0, 13, 1)[0]
+    day = np.random.randint(0, 31, 1)[0]
 
+    entry = [c_id_, p_id_, f"{month}-{day}-2020"]
+    customer_array.append(entry)
+#%%
+customers = pd.DataFrame(customer_array, columns=customer_column)
+customers.to_csv('customers.csv', index=False)
 
 #%%
+first_names = ['John', 'Mary', 'Sue', 'Bob', 'Jane', 'Richad', 'Kevin', 'Joe', 'Chad', 'Alex', 'Susan',
+'Jennifer', 'Tiffany', 'Roger']
+last_names = ['Smith', 'Watson', 'White', 'Johnson', 'Williams', 'Jones', 'Miller', 'Davis', 'Garcia',
+'Thomas', 'Thompson', 'Haris']
 
+customer_map_cols = ['c_id', 'first', 'last']
+customer_map_arr = []
+finished_names = []
+for c_id in customers['c_id'].unique():
+    while True:
+        first = first_names[np.random.randint(0, len(first_names), 1)[0]]
+        last = last_names[np.random.randint(0, len(last_names), 1)[0]]
+        if f"{first} {last}" not in finished_names:
+            break
+    finished_names.append(f"{first} {last}")
+    entry = [c_id, first, last]
+    customer_map_arr.append(entry)
+
+#%%
+customer_map = pd.DataFrame(customer_map_arr, columns=customer_map_cols)
+customer_map.to_csv('customer_map.csv', index=False)
 
 
 #%%
