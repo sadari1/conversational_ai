@@ -32,6 +32,11 @@ for f in range(1000):
 #%%
 products = pd.DataFrame(product_array, columns=product_column)
 products.to_csv("products.csv", index=False)
+
+#%%
+products['soup'] = products.apply(lambda x: arr_to_str(x[1:]), axis=1)
+products.to_csv('products_w_soup.csv', index=False)
+
 #%%
 customer_column = ['c_id', 'p_id', 'date']
 

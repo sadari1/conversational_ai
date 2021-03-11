@@ -40,9 +40,9 @@ def get_recommendations(arg_dict):
         embeddings2 = model.encode(products['soup'], convert_to_tensor=True)
 
         cosine_scores = util.pytorch_cos_sim(embeddings1, embeddings2)
-        cosine_scores = np.array(cosine_scores)
-
-        products['scores'] = n_scores
+        cosine_scores = np.array(cosine_scores)[0]
+        # print(cosine_scores)
+        products['scores'] = cosine_scores
         top_5 = products.sort_values('scores', ascending=False).drop_duplicates('soup').iloc[1:6]
         products = products.drop('scores', axis=1)
         return top_5
@@ -55,11 +55,11 @@ def get_recommendations(arg_dict):
 #%%
 # def get_cid(customer_map, first, last):
 
-# first = 'Bob'
-# last = 'Smith'
+first = 'Bob'
+last = 'Smith'
 
-first = ''
-last = ''
+# first = ''
+# last = ''
 
 
 arg_dict = {
@@ -83,8 +83,8 @@ most_common_product = products[products['p_id'] == most_common_pid].iloc[0]
 most_common_product = most_common_product['soup']
 most_common_product
 #%%
-# products['soup'] = products.apply(lambda x: arr_to_str(x[1:]), axis=1)
-# products['soup']
+products['soup'] = products.apply(lambda x: arr_to_str(x[1:]), axis=1)
+products['soup']
 #%%
 
 #%%
